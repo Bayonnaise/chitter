@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
 require 'rack-flash'
+require 'rest_client'
 
 require_relative 'models/user'
 require_relative 'models/post'
@@ -14,6 +15,7 @@ enable :sessions
 set :session_secret, 'mysession'
 
 use Rack::Flash
+use Rack::MethodOverrideq
 
 get '/' do
 	@posts = Post.all
