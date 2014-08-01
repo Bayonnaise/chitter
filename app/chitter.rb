@@ -7,6 +7,7 @@ require_relative 'models/post'
 
 require_relative 'data_mapper_setup'
 require_relative 'helpers/application'
+require_relative 'messenger'
 
 set :views, './app/views'
 set :public_dir, './public'
@@ -14,6 +15,7 @@ enable :sessions
 set :session_secret, 'mysession'
 
 use Rack::Flash
+use Rack::MethodOverride
 
 get '/' do
 	@posts = Post.all
