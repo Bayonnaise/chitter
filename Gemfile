@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt-ruby'
 gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'rack-flash'
+gem 'rack-flash3'
+gem 'pg'
+gem 'rest_client'
 
 group :development, :test do
   gem 'capybara'
