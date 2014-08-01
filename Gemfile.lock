@@ -86,6 +86,8 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     rack (1.5.2)
+    rack-flash (0.1.2)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -129,6 +131,7 @@ DEPENDENCIES
   database_cleaner
   dm-postgres-adapter
   launchy
+  rack-flash
   rspec
   shotgun
   sinatra
