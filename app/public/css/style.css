@@ -1,0 +1,19 @@
+header {
+	height: 100px;
+	background-color: skyblue;
+	color: white;
+	display: flex;
+	padding: 0 20px;
+	font-size: 30px;
+}
+
+	header #welcome-and-sign-out {
+	  flex: 2;
+	  -webkit-flex: 2;
+	  text-align: right;  
+	}
+
+body {
+	
+}
+

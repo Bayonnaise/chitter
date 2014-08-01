@@ -63,3 +63,30 @@ feature "User signs out" do
 		expect(page).to have_content("Come back soon!")
 	end
 end
+
+feature 'User requests password reset' do
+	before(:each) do
+    User.create(:username => "Davetest",
+								:email => "dave@email.com",
+								:name => "Dave",
+								:password => 'test',
+								:password_confirmation => 'test')
+  end
+
+  scenario 'when requesting reset' do
+  	visit '/sessions/new'
+  	fill_in 'forgot_email', :with => "dave@email.com"
+  	expect(Messenger).to receive(:send_email).with(User.first)
+  	click_button "Reset"
+  	expect(page).to have_content("Password reset email sent")
+  end
+
+  scenario 'when resetting password' do
+  	User.first.update( :password_token => 123, :password_token_timestamp => Time.now - 100)
+  	visit "/users/reset_password/123"
+  	fill_in 'password', :with => "dog"
+  	fill_in 'password_confirmation', :with => "dog"
+  	click_button "Confirm"
+  	expect(User.first.password_token).to be nil
+  end
+end

@@ -5,3 +5,10 @@
 	Password: <input name='password' type='password'>
 	<input type='submit' value="Sign in">
 </form>
+
+<h1>Forgotten your password?</h1>
+
+<form method="post" action="/users/reset_password">
+	<input type="text" name="forgot_email">
+	<input type="submit" value="Reset">
+</form>

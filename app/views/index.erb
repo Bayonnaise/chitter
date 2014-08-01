@@ -1,13 +1,9 @@
- <%if current_user %>
- 	Welcome, <%= current_user.name %>
- 	<form method='post' action='/sessions'>
- 		<input type='hidden' name='_method' value='delete'>
- 		<input type='submit' value='Sign out'>
- 	</form>
- <%end%>
+ 
 
 <ul>
-	<% @posts.each do |post| %>
-		<li><%= post.text %></li>
+	<% @posts.reverse.each do |post| %>
+		<% user = User.first(:id => post.user_id) %>
+		<% time = post.timestamp %>
+		<li><%= post.text %> - <%= user ? user.username : "Deleted user" %> <%= time.strftime("posted at %I:%M%p on %d/%m/%y") %></li>
 	<% end %>
 </ul>
