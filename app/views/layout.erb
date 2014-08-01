@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chitter</title>
+</head>
+<body>
+	<header>
+		<h1>Chitter</h1>
+	</header>
+
+	<% if flash[:notice] %>
+		<div id="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+	<% if flash[:errors] && !flash[:errors].empty? %>
+		<ul id='errors'>
+			<% flash[:errors].each do |error| %>
+				<li><%= error %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= yield %>
+</body>
+</html>
