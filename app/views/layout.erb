@@ -6,22 +6,19 @@
 	<title>Chitter</title>
 </head>
 <body>
-	<%= erb :header %>
+		<%= erb :header %>
 
-	<% if flash[:notice] %>
-		<div id="notice">
-			<%= flash[:notice] %>
+		<div id="body-container">
+
+			<section id="left-column">
+				<%= erb :"left-column" %>
+				<%= erb :flash %>
+			</section>
+
+			<%= yield %>
+
 		</div>
-	<% end %>
 
-	<% if flash[:errors] && !flash[:errors].empty? %>
-		<ul id='errors'>
-			<% flash[:errors].each do |error| %>
-				<li><%= error %></li>
-			<% end %>
-		</ul>
-	<% end %>
-
-	<%= yield %>
+		<%= erb :footer %>
 </body>
 </html>

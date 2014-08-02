@@ -1,0 +1,11 @@
+<li class='post box'>
+	<div class='user'>
+		<%= user ? user.username : "Deleted user" %>
+	</div>
+	<div class='content'>
+		<%= post.text %>
+	</div>	
+	<div class='info'>
+		<%= time.strftime("%d/%m/%y, %I:%M%p") %>
+	</div>
+</li>

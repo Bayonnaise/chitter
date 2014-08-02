@@ -1,9 +1,9 @@
- 
-
-<ul>
-	<% @posts.reverse.each do |post| %>
-		<% user = User.first(:id => post.user_id) %>
-		<% time = post.timestamp %>
-		<li><%= post.text %> - <%= user ? user.username : "Deleted user" %> <%= time.strftime("posted at %I:%M%p on %d/%m/%y") %></li>
-	<% end %>
-</ul>
+ <div id="posts-container">
+	<ul>
+		<% @posts.reverse.each do |post| %>
+			<% user = User.first(:id => post.user_id) %>
+			<% time = post.timestamp %>
+			<%= partial :post, :locals => {:post => post, :user => user, :time => time} %>
+		<% end %>
+	</ul>
+</div>

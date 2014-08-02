@@ -1,0 +1,28 @@
+<%if current_user %>
+	<section class='box'>
+		<form action="/posts" method="post">
+			<input class='large-input' maxlength="140" type="text" name="text" placeholder="Spout some shit...">
+			<input class='button' type="submit" value="Post">
+		</form>
+	</section>
+<% else %>
+	<form class='box' action='/sessions' method='post'>
+		<input class='input' name='username' type='text' placeholder='Username'>
+		<input class='input' name='password' type='password' placeholder='Password'>
+		<input class='button' type='submit' value="Sign in">
+	</form>
+
+	<form class='box' action='/users' method='post'>
+		<input class='input' name="username" type='text' placeholder='Username'>
+		<input class='input' name="email" type='text' placeholder='Email'>
+		<input class='input' name="name" type='text' placeholder='Name'>
+		<input class='input' name='password' type='password' placeholder='Password'>
+		<input class='input' name='password_confirmation' type='password' placeholder='Confirm'>
+		<input class='button' type='submit' value="Sign up">
+	</form>
+
+	<form class='box' method="post" action="/users/reset_password">
+		<input class='input' type="text" name="forgot_email" placeholder='Email'>
+		<input class='button' type="submit" value="Reset password">
+	</form>
+<% end %>

@@ -1,19 +1,201 @@
-header {
-	height: 100px;
-	background-color: skyblue;
-	color: white;
-	display: flex;
-	padding: 0 20px;
-	font-size: 30px;
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
-
-	header #welcome-and-sign-out {
-	  flex: 2;
-	  -webkit-flex: 2;
-	  text-align: right;  
-	}
 
 body {
-	
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, Sans-serif;
+	margin-bottom: 70px;
+	/*background-image: url('/images/diamond_eyes.png');*/
+	background-color: #e9eaed;
 }
 
+header {
+	height: 37px;
+	width: 100%;
+	background-color: #3D4048;
+	color: white;
+	display: inline-block;
+	padding: 0 20px;
+	border-bottom: 1px solid #133783;
+	-webkit-box-shadow: 0 2px 2px -2px rgba(0,0,0,.52);
+}
+
+	header > * {
+		margin: 0 auto;
+	}
+
+	header #logo {
+		-webkit-flex: 1;
+		flex: 1;
+		margin: 0px 20px 0px 10px;
+		font-size: 20px;
+	}
+
+	header #welcome-and-sign-out {
+	  flex: 1;
+	  -webkit-flex: 1;
+	  text-align: right; 
+	  margin-left: 20px;
+	  margin-top: 3px;
+	}
+
+	header #welcome-message {
+		font-size: 15px;
+		text-shadow: 0 -1px rgba(0,0,0,.5);
+	}
+
+	header a {
+		color: white;
+		text-decoration: none;
+	}
+
+h2 {
+	margin: 5px;
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: white;
+  height: 20px;
+  background-color: #3D4048;
+  width: 100%;
+  border-top: 1px solid #133783;
+	-webkit-box-shadow: 0 2px 2px -2px rgba(0,0,0,.52);
+}
+
+	footer #me {
+		font-size: 10px;
+		flex: 1;
+	}
+
+	footer #site-details {
+		font-size: 10px;
+		flex: 2;
+		text-align: right;
+	}
+
+a {
+	color: white; /*text colour*/
+  text-decoration: none; /*no underlining*/
+}
+
+
+.button {
+  display: inline-block;
+/*  width: 60px;*/
+  background-color: #AA7570;
+  border: 1px solid white;
+  color: white; /*text colour*/
+  text-decoration: none; /*no underlining*/
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
+}
+
+
+/* ---- CONTAINERS ---- */
+
+.header-footer-container {
+	display: -webkit-flex;
+	display: flex;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+#body-container {
+	width: 800px;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+}
+
+#left-column {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	width: 180px;
+}
+
+	#left-column .box {
+		background-color: white;
+	  /*border: 1px solid rgba(0,0,0,0.1);*/
+	  padding: 10px;
+	  margin: 10px 5px 0px 5px;
+	  font-size: 13px;
+	  border: 1px solid;
+		border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+		-webkit-border-radius: 3px;
+	}
+
+
+.flash {
+	width: 100%;
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  color: white;
+  flex-shrink: 0;
+}
+
+	.flash.notice {
+		background-color: rgba(67,183,120,0.75);
+	}
+
+	.flash.errors {
+		background-color: red;
+	}
+
+#posts-container {
+	flex: 1;
+	-webkit-flex: 1;
+  height: 100%;
+}
+	
+	.post {
+		background-color: white;
+	  border: 1px solid rgba(0,0,0,0.1);
+	  padding: 8px;
+	  margin: 10px 5px 0px 5px;
+	  font-size: 13px;
+	}
+
+	.post .user {
+		color: SaddleBrown;
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+
+	.post .content {
+		color: black;
+		font-size: 18px;
+	}
+
+	.post .info {
+		text-align: right;
+		font-size: 10px;
+		color: SaddleBrown;
+	}
+
+.input {
+	width: 100%;
+	height: 28px;
+	margin: 5px 0px;
+	border-radius: 4px;
+}
+
+.large-input {
+	width: 100%;
+	height: 75px;
+	margin: 5px 0px;
+	border-radius: 4px;
+	text-align: top;
+}
