@@ -19,16 +19,15 @@ feature "User adds a new post" do
     expect(post.timestamp).to be_kind_of(Time)
   end
 
-  scenario "when not signed in" do
+  scenario "that's 140 characters" do
+    sign_in("Davetest", 'test')
     expect(Post.count).to eq(0)
-    add_post("This is another test")
-    expect(Post.count).to eq(0)
-    expect(page).to have_content("Please log in")
+    add_post("TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest")
+    expect(Post.count).to eq(1)
   end
 
   def add_post(text)
-    visit '/posts/new'
-    fill_in 'text', :with => text
+    fill_in 'post-content', :with => text
     click_button 'Post'
   end      
 end

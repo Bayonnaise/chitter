@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<title>Chitter</title>
+</head>
+<body>
+		<header>
+	<div class='header-footer-container'>
+		<section id="logo">
+			<a href="/"><img src="/images/logo.png"></a>
+		</section>
+
+		<section id="welcome-and-sign-out">
+			
+				<span id="welcome-message">
+	 				<form id="sign-out" method="post" action="/sessions">
+	 					Davetest
+						<input type="hidden" name="_method" value="delete">
+						<input class="button" type="submit" value="Sign out">
+					</form>
+				</span>
+ 			
+ 		</section>
+ 	</div>
+</header>
+
+		<div id="body-container">
+
+			<section id="left-column">
+				
+
+
+					<section>
+		<form class='box' action="/posts" method="post">
+			<input class='large-input' maxlength="140" type="post-content" name="text" placeholder="Spout some shit...">
+			<input class='button' type="submit" value="Post">
+		</form>
+	</section>
+
+			</section>
+
+			 <div id="posts-container">
+	<ul>
+		
+	</ul>
+</div>
+
+		</div>
+
+		<footer>
+	<div class='header-footer-container'>
+		<div id='me'>C. Dave Bayon 2014</div>
+		<div id='site-details'>Shitstream was built in one weekend using Ruby, Sinatra, RSpec, Caybara, HTML and CSS.</div>
+	</div>
+</footer>
+</body>
+</html>

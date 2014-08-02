@@ -1,5 +1,5 @@
 <li class='post box'>
-	<div class='user'>
+	<div class=<%= user == current_user ? 'current-user' : 'user' %>>
 		<%= user ? user.username : "Deleted user" %>
 	</div>
 	<div class='content'>

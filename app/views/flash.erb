@@ -1,4 +1,3 @@
-
 <% if flash[:notice] %>
 	<div class="flash notice">
 		<%= flash[:notice] %>
@@ -6,9 +5,9 @@
 <% end %>
 
 <% if flash[:errors] && !flash[:errors].empty? %>
-	<ul class='flash errors'>
+	<ul>
 		<% flash[:errors].each do |error| %>
-			<li><%= error %></li>
+			<li class='flash error'><%= error %></li>
 		<% end %>
 	</ul>
 <% end %>

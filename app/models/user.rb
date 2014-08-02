@@ -8,11 +8,10 @@ class User
 	include DataMapper::Resource
 
 	validates_confirmation_of :password
-	validates_format_of :email, :as => :email_address
 
 	property :id, Serial
 	property :username, String, :unique => true, :message => "This username is already taken", :required => true
-	property :email, String, :unique => true, :message => "This email is already taken", :required => true
+	property :email, String, :format => :email_address, :unique => true, :message => "This email is already taken", :required => true
 	property :name, String, :required => true
 	property :password_digest, Text
 	property :password_token, String, :length => 64 

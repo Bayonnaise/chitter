@@ -1,15 +1,14 @@
-get '/posts/new' do
-	erb :"posts/new"
-end
+# get '/posts/new' do
+# 	erb :"posts/new"
+# end
 
 post '/posts' do 
-	if current_user
-		user_id = current_user.id
-		text = params[:text]
-		time = Time.new
-		Post.create(:text => text, :timestamp => time, :user_id => user_id)
-		redirect to ('/')
-	else
-		redirect to('/sessions/new')
+	user_id = current_user.id
+	text = params[:"post-content"]
+	time = Time.new
+	@post = Post.new(:text => text, :timestamp => time, :user_id => user_id)
+	unless @post.save
+		flash.now[:errors] = @post.errors.full_messages
 	end
+	redirect to ('/')
 end

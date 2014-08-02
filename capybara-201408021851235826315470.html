@@ -1,20 +1,32 @@
-<%if current_user %>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<title>Chitter</title>
+</head>
+<body>
+		<header>
+	<div class='header-footer-container'>
+		<section id="logo">
+			<a href="/"><img src="/images/logo.png"></a>
+		</section>
 
-		<form class='box' action="/posts" method="post">
-			<textarea class='large-input' maxlength="140" rows="7" name="post-content" placeholder='Spout some shit...'></textarea>
-			<input class='button' type="submit" value="Post">
-		</form>
+		<section id="welcome-and-sign-out">
+			
+ 		</section>
+ 	</div>
+</header>
 
-<% else %>
+		<div id="body-container">
 
-	<!-- Login box -->
-	<form class='box' action='/sessions' method='post'>
+			<section id="left-column">
+					<form class='box' action='/sessions' method='post'>
 		<input class='input' name='login_username' type='text' placeholder='Username'>
 		<input class='input' name='login_password' type='password' placeholder='Password'>
 		<input class='button' type='submit' value="Sign in">
 	</form>
 
-	<!-- Sign up box -->
 	<form class='box' action='/users' method='post'>
 		<input class='input' name="signup_username" type='text' placeholder='Username'>
 		<input class='input' name="signup_email" type='text' placeholder='Email'>
@@ -24,10 +36,29 @@
 		<input class='button' type='submit' value="Sign up">
 	</form>
 
-	<!-- Forgot password box -->
 	<form class='box' method="post" action="/users/reset_password">
 		<input class='input' type="text" name="forgot_email" placeholder='Email'>
 		<input class='button' type="submit" value="Reset password">
 	</form>
 
-<% end %>
+				
+
+
+			</section>
+
+			 <div id="posts-container">
+	<ul>
+		
+	</ul>
+</div>
+
+		</div>
+
+		<footer>
+	<div class='header-footer-container'>
+		<div id='me'>C. Dave Bayon 2014</div>
+		<div id='site-details'>Shitstream was built in one weekend using Ruby, Sinatra, RSpec, Caybara, HTML and CSS.</div>
+	</div>
+</footer>
+</body>
+</html>
