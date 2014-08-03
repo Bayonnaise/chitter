@@ -9,6 +9,7 @@
 
 	<!-- Login box -->
 	<form class='box' action='/sessions' method='post'>
+		<h2>Sign in...</h2>
 		<input class='input' name='login_username' type='text' placeholder='Username'>
 		<input class='input' name='login_password' type='password' placeholder='Password'>
 		<input class='button' type='submit' value="Sign in">
@@ -16,6 +17,7 @@
 
 	<!-- Sign up box -->
 	<form class='box' action='/users' method='post'>
+		<h2>New to Shitstream? Sign up!</h2>
 		<input class='input' name="signup_username" type='text' placeholder='Username'>
 		<input class='input' name="signup_email" type='text' placeholder='Email'>
 		<input class='input' name="signup_name" type='text' placeholder='Name'>
@@ -26,6 +28,7 @@
 
 	<!-- Forgot password box -->
 	<form class='box' method="post" action="/users/reset_password">
+		<h2>Forgot your password?</h2>
 		<input class='input' type="text" name="forgot_email" placeholder='Email'>
 		<input class='button' type="submit" value="Reset password">
 	</form>

@@ -12,3 +12,21 @@ post '/posts' do
 	end
 	redirect to ('/')
 end
+
+get '/posts/reply/:id' do
+	@original_id = params['id']
+	puts @original_id
+	erb :"posts/reply"
+end
+
+post '/posts/reply/:id' do
+	@original_id = params['id']
+	user_id = current_user.id
+	text = params[:"reply-text"]
+	time = Time.new
+	@post = Post.new(:text => text, :timestamp => time, :user_id => user_id, :reply_to_id => @original_id)
+	unless @post.save
+		flash.now[:errors] = @post.errors.full_messages
+	end
+	redirect to ('/')
+end

@@ -1,4 +1,4 @@
-module SessionHelpers
+module Helpers
 
 	def sign_up(username = "Davetest", email="dave@email.com", name="Dave Smith", password="pass", password_confirmation="pass")
 		visit '/'
@@ -16,5 +16,10 @@ module SessionHelpers
 		fill_in 'login_password', :with => password
 		click_button("Sign in")
 	end
+
+	def add_post(text)
+    fill_in 'post-content', :with => text
+    click_button 'Post'
+  end
 	
 end

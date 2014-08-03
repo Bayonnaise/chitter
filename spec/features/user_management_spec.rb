@@ -1,7 +1,6 @@
 require 'spec_helper'
 require_relative 'helpers/session'
-
-include SessionHelpers
+include Helpers
 
 feature "User signs up" do	
 	scenario "when logged out" do

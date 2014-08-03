@@ -1,11 +1,20 @@
 <li class='post box'>
-	<div class=<%= user == current_user ? 'current-user' : 'user' %>>
+	<span class=<%= user == current_user ? 'current-user' : 'user' %>>
 		<%= user ? user.username : "Deleted user" %>
-	</div>
+	</span>
+	<% if original_post = post.reply_to_id %>
+		<% original_user = User.first(:id => (Post.first(:id => original_post).user_id)) %>
+		<span class=<%= original_user == current_user ? 'current-user' : 'user' %>>
+			-> <%= User.first(:id => (Post.first(:id => original_post).user_id)).username %>
+		</span>
+	<% end %>
 	<div class='content'>
 		<%= post.text %>
-	</div>	
-	<div class='info'>
-		<%= time.strftime("%d/%m/%y, %I:%M%p") %>
 	</div>
+	<span class='reply-to'>
+		<a href="/posts/reply/<%=post.id%>">Reply</a>
+	</span>	
+	<span class='info'>
+		<%= time.strftime("%d/%m/%y, %I:%M%p") %>
+	</span>
 </li>

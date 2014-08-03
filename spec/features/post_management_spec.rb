@@ -1,4 +1,6 @@
 require 'spec_helper'
+require_relative 'helpers/session'
+include Helpers
 
 feature "User adds a new post" do
   before(:each) do
@@ -24,10 +26,5 @@ feature "User adds a new post" do
     expect(Post.count).to eq(0)
     add_post("TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest")
     expect(Post.count).to eq(1)
-  end
-
-  def add_post(text)
-    fill_in 'post-content', :with => text
-    click_button 'Post'
-  end      
+  end     
 end
