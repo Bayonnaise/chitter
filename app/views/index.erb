@@ -3,10 +3,20 @@
 		<% if current_user %>
 			<%= erb :nav %>
 		<% end %>
+
 		<% @posts.reverse.each do |post| %>
+			
 			<% user = User.first(:id => post.user_id) %>
 			<% time = post.timestamp %>
 			<%= partial :post, :locals => {:post => post, :user => user, :time => time} %>
+			
+			<% if post.id == @original_id.to_i %>
+				<form id="reply-area" action="/posts/reply/<%=@original_id%>" method="post">
+					<textarea class='reply-input' maxlength="140" rows="2" name="reply-text" placeholder='Spout your reply...'></textarea>
+					<input class='button' type="submit" value="Reply">
+				</form>
+			<% end %>
+
 		<% end %>
 	</ul>
 </div>

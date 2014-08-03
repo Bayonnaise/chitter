@@ -8,9 +8,11 @@
 			-> <%= User.first(:id => (Post.first(:id => original_post).user_id)).username %>
 		</span>
 	<% end %>
+
 	<div class='content'>
 		<%= post.text %>
 	</div>
+
 	<span class='reply-to'>
 		<a href="/posts/reply/<%=post.id%>">Reply</a>
 	</span>	

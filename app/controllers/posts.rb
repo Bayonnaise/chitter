@@ -15,8 +15,8 @@ end
 
 get '/posts/reply/:id' do
 	@original_id = params['id']
-	puts @original_id
-	erb :"posts/reply"
+	@posts = Post.all
+	erb :index
 end
 
 post '/posts/reply/:id' do

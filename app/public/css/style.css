@@ -194,12 +194,6 @@ a {
 		margin-bottom: 5px;
 	}
 
-	/*.post .reply-to {
-		color: #A5C5AF;
-		font-size: 12px;
-		margin-bottom: 5px;
-	}*/
-
 	.post .content {
 		color: black;
 		font-size: 16px;
@@ -230,6 +224,20 @@ a {
 	margin: 5px 0px;
 	border-radius: 4px;
 	text-align: top;
+}
+
+.reply-input {
+	width: 100%;
+	margin: 5px 5px 5px 5px;
+	border-radius: 4px;
+	text-align: top;
+}
+
+#reply-area {
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	padding: 0px 3px;
 }
 
 nav {
